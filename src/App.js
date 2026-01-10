@@ -14,7 +14,6 @@ import {
   Route
 } from "react-router-dom";
 
-
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setalert] = useState(null);
@@ -68,7 +67,6 @@ function App() {
             <About />
           </Route>
 
-          {/* FIXED: removed space from route */}
           <Route path="/signin">
            <Signin></Signin>
           </Route>

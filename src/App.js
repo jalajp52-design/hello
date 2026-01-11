@@ -64,6 +64,18 @@ function App() {
             <Footer></Footer>
           </Route>
 
+          <Route exact path="/hello">
+            <Home />
+           
+            <Textform
+              head="Enter your text"
+              mode={mode}
+              showAlert={showAlert}
+            />
+             <Acoo />
+            <Footer></Footer>
+          </Route>
+
           <Route path="/about">
             <About />
             <Footer></Footer>

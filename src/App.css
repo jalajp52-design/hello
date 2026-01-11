@@ -40,16 +40,22 @@ body
     transform: rotate(360deg);
   }
 }
-    /* Customizing the Navbar background and text */
+
+/* Customizing the Navbar background and text */
 .navbar {
   padding: 0.8rem 1.5rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
 }
-.image
-{
-  height: 20px;
-  width: 30px;
+
+/* Fix Logo to right side */
+.image {
+  height: 70px;       /* keep logo big */
+  width: auto;        /* maintain aspect ratio */
+  margin-left: auto;  /* moves logo to RIGHT */
 }
+
 .navbar-brand {
   font-weight: bold;
   font-size: 1.5rem;
@@ -74,6 +80,7 @@ body
     margin-top: 1rem;
   }
 }
+
 form {
   max-width: 600px;
   margin: 40px auto;
@@ -103,10 +110,10 @@ button.btn-primary {
   border-radius: 6px;
 }
 
-
 button.btn-primary:hover {
   background-color: blueviolet;
 }
+
 .modern-input {
   border: 1px solid #ced4da;
   padding: 10px 14px;
@@ -142,6 +149,7 @@ button.btn-primary:hover {
   opacity: 0;
   transform: translateX(10px);
 }
+
 /* Mobile-friendly tweaks */
 @media (max-width: 768px) {
   body, html {
@@ -164,4 +172,3 @@ button.btn-primary:hover {
     height: auto;
   }
 }
-

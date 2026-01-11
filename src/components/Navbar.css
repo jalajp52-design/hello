@@ -1,0 +1,39 @@
+/* Logo */
+.mm {
+    height: 50px;
+}
+
+/* Desktop: logo fixed left, navbar content shifted */
+@media (min-width: 992px) {
+    .mm {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .navbar {
+        height: 50px;       /* match logo height */
+        padding-left: 70px; /* space for logo width + margin */
+        align-items: center; /* vertically center content */
+    }
+}
+
+/* Mobile: logo in normal flow so menu doesn't overlap */
+@media (max-width: 991px) {
+    .mm {
+        position: relative;
+        display: block;
+        margin-bottom: 10px; /* spacing below logo */
+    }
+
+    .navbar {
+        height: auto;
+        padding-left: 15px;
+    }
+}
+
+/* Brand spacing from logo */
+.navbar-brand {
+    margin-left: 10px;
+}

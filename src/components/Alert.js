@@ -1,5 +1,5 @@
 import React from 'react';
-//alert components
+// alert component
 
 export default function Alert(props) {
   const capital = (word) => {
@@ -11,7 +11,16 @@ export default function Alert(props) {
   return (
     props.alert && (
       <div
-        className={`alert alert-${props.alert.type} alert-dismissible fade show`}
+        style={{
+          position: 'fixed',
+          top: '50px',          // height of your navbar (logo is 70px)
+          left: '0',
+          width: '100%',
+          zIndex: 9999,
+          color : 'white',
+          backgroundColor:'black'
+        }}
+        className={`alert alert-${props.alert.type} alert-dismissible fade show mb-0`}
         role="alert"
       >
         <strong>{capital(props.alert.type)}</strong> : {props.alert.msg}

@@ -54,21 +54,24 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Home />
-            <Acoo />
+           
             <Textform
               head="Enter your text"
               mode={mode}
               showAlert={showAlert}
             />
+             <Acoo />
             <Footer></Footer>
           </Route>
 
           <Route path="/about">
             <About />
+            <Footer></Footer>
           </Route>
 
           <Route path="/signin">
            <Signin></Signin>
+              <Footer></Footer>
           </Route>
         </Switch>
       </Router>

@@ -1,28 +1,31 @@
-import './Acoo.css'   // import CSS file
+import './Acoo.css'; // import CSS file
 import React, { useState } from 'react';
 
-export default function Acoo() {
-
+export default function Acoo(props) {
+  // State for internal dark/light toggle (optional)
   const [myStyle, setMyStyle] = useState({
-    color: 'white',
-    backgroundColor: 'black'
+    color: props.mode === 'dark' ? 'white' : 'black',
+    backgroundColor: props.mode === 'dark' ? 'black' : 'white',
   });
 
-  const [setbtn, setBtntext] = useState("enable dark mode");
-//dark mode bwith props
-  const hello = () => {
+  const [btnText, setBtnText] = useState(
+    props.mode === 'dark' ? "Enable Light Mode" : "Enable Dark Mode"
+  );
+
+  // Function to toggle dark/light mode
+  const toggleStyle = () => {
     if (myStyle.color === 'white') {
       setMyStyle({
         color: 'black',
-        backgroundColor: 'pink'
+        backgroundColor: 'white',
       });
-      setBtntext("enable light mode");
+      setBtnText("Enable Dark Mode");
     } else {
       setMyStyle({
         color: 'white',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
       });
-      setBtntext("enable dark mode");
+      setBtnText("Enable Light Mode");
     }
   };
 
@@ -34,7 +37,7 @@ export default function Acoo() {
           id="accordionPanelsStayOpenExample"
           style={myStyle}
         >
-
+          {/* Accordion Item 1 */}
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
@@ -52,12 +55,13 @@ export default function Acoo() {
               className="accordion-collapse collapse show"
             >
               <div className="accordion-body">
-                <strong>This is the first item’s accordion body.</strong>
-                It is shown by default. You can add any content here.
+                <strong>This is the first item’s accordion body.</strong> You can
+                add any content here.
               </div>
             </div>
           </div>
 
+          {/* Accordion Item 2 */}
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
@@ -74,12 +78,12 @@ export default function Acoo() {
               className="accordion-collapse collapse"
             >
               <div className="accordion-body">
-                <strong>This is the second item’s accordion body.</strong>
-                It is hidden by default.
+                <strong>This is the second item’s accordion body.</strong> Hidden by default.
               </div>
             </div>
           </div>
 
+          {/* Accordion Item 3 */}
           <div className="accordion-item">
             <h2 className="accordion-header">
               <button
@@ -96,21 +100,19 @@ export default function Acoo() {
               className="accordion-collapse collapse"
             >
               <div className="accordion-body">
-                <strong>This is the third item’s accordion body.</strong>
-                It is hidden by default.
+                <strong>This is the third item’s accordion body.</strong> Hidden by default.
               </div>
             </div>
           </div>
 
-          <div className="class">
-       <label class="switch">
-  <input type="checkbox" onClick={hello}/>
-  <span class="slider round"></span>
-  
-</label>
-          {setbtn}  
+          {/* Dark/Light toggle switch */}
+          <div className="class mt-3">
+            <label className="switch">
+              <input type="checkbox" onClick={toggleStyle} />
+              <span className="slider round"></span>
+            </label>
+            <span className="ms-2">{btnText}</span>
           </div>
-
         </div>
       </div>
     </>
